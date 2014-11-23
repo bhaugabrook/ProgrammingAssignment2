@@ -2,7 +2,8 @@
 ##Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## BH: MakeCacheMatrix initialize the variables and function calls for the caching inverse matrix.
+## Set and Get allows saving and retrieving cached values.
 
 makeCacheMatrix <- function(x = matrix()) {
   
@@ -21,7 +22,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## BH 11/23/2014:  CACHESOLVE attempts to retreive a cached value of the inverse matrix.
+## if there is no cached value, it is generated and saved.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -31,6 +33,8 @@ cacheSolve <- function(x, ...) {
     message("getting cached data")
     return(m)
   }
+  
+  ##Below code generates the cached value for the first time
   data <- x$get()
   m <- solve(data
   x$setinverse(m)
